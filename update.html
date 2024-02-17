@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Update Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body style="background-color: rgb(255, 165, 69);">
+    <h1 class="text-dark bg-warning border border-dark p-3 h1">User Update Form</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+            </div>
+            <form action="/update" method="POST" class="row g-3 needs-validation" novalidate>
+                <!-- Hidden input field to store user ID -->
+                <input type="hidden" name="id" value="{{%id}}">
+                <!-- Name -->
+                <div class="col-md-12">
+                    <label for="name" class="form-label">Name</label>
+                    <input name="name" type="text" class="form-control" id="name" value='{{%name}}'>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <!-- Email -->
+                <div class="col-md-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input name="email" type="email" class="form-control" id="email" value="{{%email}}" placeholder="john@example.com" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <!-- Age -->
+                <div class="col-md-12">
+                    <label for="age" class="form-label">Age</label>
+                    <input name="age" type="number" class="form-control" id="age" value="{{%age}}" placeholder="18" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <!-- Phone -->
+                <div class="col-md-12">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input name="phone" type="number" class="form-control" id="phone" value="{{%phone}}" placeholder="+91" required minlength="10" maxlength="10">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="col-12 text-center">
+                  
+                    <button class="btn btn-success" type="submit">Update</button/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

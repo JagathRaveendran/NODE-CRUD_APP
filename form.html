@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>form</title>
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body style="background-color: rgb(255, 165, 69);">
+    <h1 class="text-dark bg-warning border border-dark p-3 h1">User Form</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+            </div>
+        <form action="/submit" method="get" class="row g-3 needs-validation" novalidate >
+<!-- name -->
+            <div class="col-md-12">
+              <label for="validationCustom01" class="form-label">Name</label>
+              <input name="Name" type="text" class="form-control" id="name" placeholder="Jhon" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+<!-- email  -->
+            <div class="col-md-12">
+              <label for="validationCustom01" class="form-label">Email</label>
+              <input name="Email" type="email" class="form-control" id="email" value="abc@gmail.com" placeholder="abcd@gmail.com" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+<!-- age  -->
+            <div class="col-md-12">
+                <label for="validationCustom01" class="form-label">Age</label>
+                <input name="Age" type="number" class="form-control" id="age" value="22" placeholder="18" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+<!-- phone  -->
+            <div class="col-md-12">
+              <label for="validationCustom01" class="form-label">Phone</label>
+              <input name="Phone" type="number" class="form-control" id="phone" value="123456789" placeholder="+91" required minlength="10" maxlength="10">
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            
+<!-- button  -->
+            <div class="col-6 text-center">
+              <button class="btn btn-success text-center" type="submit" onclick="validate()">Submit form</button>
+            </div>
+            <div class="col-6 text-center">
+                <a href="index.html"><button class="btn btn-warning text-center" type="button">Back to Home</button></a>
+            </div>
+
+          </form>    
+        </div>
+    </div>
+    
+
+<script>
+  (() => {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+  
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>
+      <script src="style.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
